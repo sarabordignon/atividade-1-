@@ -1,0 +1,41 @@
+create table escola (
+id_escola int auto_increment primary key,
+endereco varchar (45) not null,
+numero bigint (11) not null);
+
+insert into escola (endereco, numero) values ('joão marques', 233);
+insert into escola (endereco, numero) values ('centro', 55);
+
+create table professor (
+id_professor int auto_increment primary key,
+nome varchar (45) not null,
+materia varchar (45) not null,
+turno varchar (45) not null,
+contato text not null,
+id_escola int,
+foreign key (id_escola) references escola (id_escola));
+
+insert into professor (nome, materia, turno, contato, id_escola) values ('ana', 'biologia', 'manhã', 'aninha123@gmail', 1);
+insert into professor (nome, materia, turno, contato, id_escola) values ('maria', 'matemática', 'noite', 'maria123@gmail', 1);
+
+create table turma (
+id_turma int auto_increment primary key,
+quantia_alunos int not null,
+professor varchar (45) not null,
+id_professor int,
+foreign key (id_professor) references professor (id_professor));
+
+insert into turma (quantia_alunos, professor, id_professor) values (23, 'ana', 1);
+insert into turma (quantia_alunos, professor, id_professor) values (35, 'maria', 2);
+
+create table aluno (
+id_aluno int auto_increment primary key,
+nome varchar (45) not null,
+contato text not null,
+endereco varchar (45) not null,
+turno varchar (45) not null,
+id_turma int,
+foreign key (id_turma) references turma (id_turma));
+
+insert into aluno (nome, contato, endereco, turno, id_turma) values ('sara', 'sara123@gmail', 'rua orquideas' , 'manha', 1);
+insert into aluno (nome, contato, endereco, turno, id_turma) values ('sara', 'sara123@gmail', 'rua orquideas' , 'manha', 2);
