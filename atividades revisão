@@ -1,0 +1,133 @@
+1 
+nome = input("qual seu nome? ")
+idade = int(input("qual sua idade? "))
+cidade = input("qual sua cidade? ")
+print (f"Olá meu nome é {nome}, tenho {idade} anos e moro em {cidade}")
+
+2
+n1 = float(input("digite o primeiro número: "))
+n2 = float(input("digite o segundo número: "))
+
+soma = n1+n2 
+print ("soma igual a:", soma)
+
+subtracao = n1-n2
+print ("subtração igual a:", subtracao)
+
+multiplicacao = n1*n2
+print ("multiplicação igual a:", multiplicacao)
+
+if n2 == 0:
+    print ("não é possível dividir por zero, digite outro segundo número")
+else:
+    divisao = n1/n2
+    print ("divisão igual a:", divisao)
+
+3
+n = int(input("digite um número: "))
+for i in range (1, 11, 1):
+    print (n * i)
+
+4
+senha = 15
+
+while True:
+    tentativa = int(input("digite os números: "))
+    
+    if tentativa > 15:
+        print ("maior que a senha, tente novamente")
+    elif tentativa < 15:
+        print ("menor que a senha, tente novamente")
+    elif tentativa == 15:
+        print ("senha válida")
+        break
+
+5
+compras = []
+
+i1 = input("item 1 ")
+i2 = input("item 2 ")
+i3 = input("item 3 ")
+i4 = input("item 4 ")
+i5 = input("item 5 ")
+
+compras.append([i1])
+compras.append([i2])
+compras.append([i3])
+compras.append([i4])
+compras.append([i5])
+
+print ("compras")
+print ("1" , compras[0])
+print ("2" , compras[1])
+print ("3" , compras[2])
+print ("4" , compras[3])
+print ("5" , compras[3])
+
+ou 
+
+compras = []
+
+for c in range (5):
+    item = input(f"digite o {c+1}º item: ")
+    compras.append(item)
+
+print ("compras:")
+for c, item in enumerate (compras, 1):
+    print (f"{c} : {item}")
+
+6
+notas = []
+
+for n in range (6):
+    nota = float(input(f"{n+1}º nota: "))
+    notas.append(nota)
+    
+print (notas)
+
+maior = max(notas)
+print ("a maior nota da turma é: ", maior)
+
+menor = min(notas)
+print ("a menor nota da turma é: " , menor)
+
+media = sum(notas) / len(notas)
+print ("a media da turma é:" , media)
+
+7
+n = int(input("digite um número: "))
+ 
+def parOuImpar (n):
+    if n % 2 == 0:
+        return "par"
+    else:
+        return "impar"
+
+resultado = parOuImpar (n)
+print (resultado)
+
+8
+peso = float(input("qual seu peso? "))
+altura = float(input("qual sua altura? "))
+    
+def calcular_imc (peso, altura):
+    imc = peso / (altura ** 2)
+    return imc
+    
+imc = calcular_imc (peso, altura)
+print (imc)
+
+def classificar_imc (imc):
+    if imc <18.5:
+        return ("peso baixo (menor que 18.5)")
+    elif imc >= 18.6 <=24.9:
+        return ("peso normal (maior ou igual a 18.6 e menor ou igual a 24.9)")
+    elif imc >=25.0 <=29.9:
+        return ("sobrepeso (maior ou igual a 25.0 e menor ou igual a 29.9)")
+    elif imc >=30.0:
+        return ("obeso (maior que 30.0)")
+        
+classificacao = classificar_imc (imc)
+print (classificacao)
+
+
